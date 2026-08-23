@@ -1,0 +1,24 @@
+:root {
+  --xilot-dark: #151823;
+  --xilot-graphite: #20232D;
+  --xilot-lime: #B7FF00;
+  --xilot-white: #FFFFFF;
+  --xilot-gray: #A7ACB8;
+  --xilot-green: #8EA300;
+  --xilot-error: #E5484D;
+  --xilot-warning: #E5A93F;
+  --xilot-success: #6FCF97;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --glow-lime: 0 0 24px rgba(183, 255, 0, 0.18);
+}

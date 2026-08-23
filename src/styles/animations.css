@@ -1,0 +1,22 @@
+.fade-up-enter {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.fade-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--xilot-graphite) 25%, rgba(167, 172, 184, 0.08) 50%, var(--xilot-graphite) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shine 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

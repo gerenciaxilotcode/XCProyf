@@ -1,0 +1,27 @@
+.sectors-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.sector-tag {
+  background-color: var(--xilot-graphite);
+  border: 1px solid rgba(167, 172, 184, 0.16);
+  color: var(--xilot-gray);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.sector-tag:hover {
+  border-color: rgba(183, 255, 0, 0.4);
+  color: var(--xilot-lime);
+}
+
+.sectors-note {
+  color: var(--xilot-gray);
+  margin-bottom: var(--space-4);
+  max-width: 520px;
+}

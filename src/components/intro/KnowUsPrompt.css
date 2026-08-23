@@ -1,0 +1,51 @@
+.know-screen {
+  position: fixed;
+  inset: 0;
+  background-color: var(--xilot-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: var(--space-4);
+}
+
+.know-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--xilot-graphite);
+  border: 1px solid rgba(183, 255, 0, 0.16);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-soft);
+}
+
+.know-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--xilot-white);
+}
+
+.know-subtitle {
+  color: var(--xilot-gray);
+  font-size: 0.95rem;
+}
+
+.know-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: var(--space-3);
+}
+
+.know-actions .btn-primary,
+.know-actions .btn-secondary {
+  width: 100%;
+}

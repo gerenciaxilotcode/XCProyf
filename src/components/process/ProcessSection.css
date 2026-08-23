@@ -1,0 +1,34 @@
+.process-section {
+  background-color: var(--xilot-graphite);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.process-step {
+  border-left: 2px solid rgba(183, 255, 0, 0.3);
+  padding-left: var(--space-3);
+}
+
+.process-number {
+  display: block;
+  color: var(--xilot-lime);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.process-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--xilot-white);
+  margin-bottom: 6px;
+}
+
+.process-desc {
+  color: var(--xilot-gray);
+  font-size: 0.88rem;
+}

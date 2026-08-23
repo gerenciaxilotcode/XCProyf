@@ -1,0 +1,22 @@
+.cta-box {
+  background-color: var(--xilot-graphite);
+  border: 1px solid rgba(183, 255, 0, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cta-box h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--xilot-white);
+  font-weight: 700;
+}
+
+.cta-box p {
+  color: var(--xilot-gray);
+  max-width: 480px;
+}

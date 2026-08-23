@@ -1,0 +1,36 @@
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background-color: var(--xilot-dark);
+}
+
+.admin-login-card {
+  background-color: var(--xilot-graphite);
+  border: 1px solid rgba(167, 172, 184, 0.12);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.admin-login-card h1 {
+  color: var(--xilot-white);
+  font-size: 1.4rem;
+  margin-top: var(--space-2);
+}
+
+.admin-login-card p {
+  color: var(--xilot-gray);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-2);
+}
+
+.admin-login-card button {
+  margin-top: var(--space-2);
+}

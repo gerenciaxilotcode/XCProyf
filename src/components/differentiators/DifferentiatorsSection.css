@@ -1,0 +1,24 @@
+.differentiators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.differentiator-card {
+  background-color: var(--xilot-graphite);
+  border: 1px solid rgba(167, 172, 184, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  color: var(--xilot-lime);
+}
+
+.differentiator-card h3 {
+  color: var(--xilot-white);
+  font-size: 1.05rem;
+  margin: var(--space-2) 0 6px;
+}
+
+.differentiator-card p {
+  color: var(--xilot-gray);
+  font-size: 0.88rem;
+}
