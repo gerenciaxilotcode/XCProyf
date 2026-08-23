@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { buildWhatsAppLink } from '../../lib/whatsapp.js'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './Hero.css'
 
 const container = {
@@ -17,6 +18,8 @@ const item = {
 }
 
 function Hero() {
+  const { hero, contact } = useSiteContent()
+
   return (
     <section className="hero">
       <div className="hero-grid" />
@@ -24,30 +27,34 @@ function Hero() {
 
       <motion.div className="container hero-inner" variants={container} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={item}>
-          Desarrollo de software para negocios reales
+          {hero.eyebrow}
         </motion.span>
 
         <motion.h1 className="hero-title" variants={item}>
-          Software hecho para tu negocio.
+          {hero.title}
         </motion.h1>
 
         <motion.p className="hero-subtitle" variants={item}>
-          Desarrollamos soluciones digitales a la medida para pequeños y medianos negocios,
-          adaptadas a sus necesidades, procesos y presupuesto.
+          {hero.subtitle}
         </motion.p>
 
         <motion.div className="hero-actions" variants={item}>
-          <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Quiero mi proyecto
+          <a
+            href={buildWhatsAppLink(contact.whatsappMessage, contact.whatsappNumber)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            {hero.ctaPrimaryLabel}
             <ArrowRight size={18} />
           </a>
           <a href="#servicios" className="btn-secondary">
-            Ver servicios
+            {hero.ctaSecondaryLabel}
           </a>
         </motion.div>
 
         <motion.p className="hero-tagline" variants={item}>
-          Automatiza. Optimiza. Crece.
+          {hero.tagline}
         </motion.p>
       </motion.div>
     </section>

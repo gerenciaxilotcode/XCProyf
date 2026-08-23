@@ -1,17 +1,27 @@
 import { useEffect, useState } from 'react'
-import { MessageSquare, Inbox, Rocket } from 'lucide-react'
+import { MessageSquare, Inbox, LayoutGrid, Image as ImageIcon } from 'lucide-react'
 import { fetchContactMessages } from '../../services/contactService.js'
+import { fetchMedia } from '../../services/mediaService.js'
+import { serviceService, sectorService } from '../../services/contentAdminService.js'
 import { useAuth } from '../../hooks/useAuth.js'
 import './AdminDashboard.css'
 
 function AdminDashboard() {
   const { user } = useAuth()
   const [messages, setMessages] = useState(null)
+  const [services, setServices] = useState(null)
+  const [sectors, setSectors] = useState(null)
+  const [media, setMedia] = useState(null)
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetchContactMessages()
-      .then(setMessages)
+    Promise.all([fetchContactMessages(), serviceService.list(), sectorService.list(), fetchMedia()])
+      .then(([m, s, sec, med]) => {
+        setMessages(m)
+        setServices(s)
+        setSectors(sec)
+        setMedia(med)
+      })
       .catch(() => setError(true))
   }, [])
 
@@ -34,14 +44,21 @@ function AdminDashboard() {
           <span className="kpi-value">{error ? '—' : newCount ?? '...'}</span>
           <span className="kpi-label">Mensajes nuevos</span>
         </div>
-      </div>
-
-      <div className="admin-notice">
-        <Rocket size={18} />
-        <p>
-          El módulo de proyectos (Trabajos Anteriores) y la subida de imágenes a Cloudinary
-          se habilitarán en la siguiente fase del panel.
-        </p>
+        <div className="kpi-card">
+          <LayoutGrid size={20} />
+          <span className="kpi-value">{error ? '—' : services?.length ?? '...'}</span>
+          <span className="kpi-label">Servicios publicados</span>
+        </div>
+        <div className="kpi-card">
+          <LayoutGrid size={20} />
+          <span className="kpi-value">{error ? '—' : sectors?.length ?? '...'}</span>
+          <span className="kpi-label">Sectores</span>
+        </div>
+        <div className="kpi-card">
+          <ImageIcon size={20} />
+          <span className="kpi-value">{error ? '—' : media?.length ?? '...'}</span>
+          <span className="kpi-label">Imágenes en biblioteca</span>
+        </div>
       </div>
     </div>
   )

@@ -41,6 +41,13 @@
   color: var(--xilot-lime);
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
 .footer-contact a {
   color: var(--xilot-lime);
   font-weight: 600;

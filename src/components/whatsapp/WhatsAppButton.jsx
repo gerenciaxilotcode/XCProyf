@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { MessageCircle } from 'lucide-react'
 import { buildWhatsAppLink } from '../../lib/whatsapp.js'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './WhatsAppButton.css'
 
 function WhatsAppButton() {
+  const { contact } = useSiteContent()
   const [hovered, setHovered] = useState(false)
 
   return (
     <a
-      href={buildWhatsAppLink()}
+      href={buildWhatsAppLink(contact.whatsappMessage, contact.whatsappNumber)}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-fab"

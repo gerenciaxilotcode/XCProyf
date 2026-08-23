@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import { buildWhatsAppLink } from '../../lib/whatsapp.js'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './CtaSection.css'
 
 function CtaSection() {
+  const { cta, contact } = useSiteContent()
+
   return (
     <section className="cta-section">
       <div className="container">
@@ -13,10 +16,15 @@ function CtaSection() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
         >
-          <h2>¿Tienes una idea para tu negocio?</h2>
-          <p>Convirtámosla en software. Sin compromiso, podemos platicarlo en una llamada o videollamada.</p>
-          <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Hablar por WhatsApp
+          <h2>{cta.title}</h2>
+          <p>{cta.description}</p>
+          <a
+            href={buildWhatsAppLink(contact.whatsappMessage, contact.whatsappNumber)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            {cta.buttonLabel}
           </a>
         </motion.div>
       </div>

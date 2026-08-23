@@ -3,19 +3,22 @@ import { Link, NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import Logo from '../ui/Logo.jsx'
 import { buildWhatsAppLink } from '../../lib/whatsapp.js'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './Navbar.css'
 
 const NAV_LINKS = [
   { to: '/', label: 'Inicio' },
   { to: '/#servicios', label: 'Servicios' },
-  { to: '/proyectos', label: 'Trabajos Anteriores' },
+  { to: '/portafolio', label: 'Portafolio' },
   { to: '/#nosotros', label: 'Nosotros' },
   { to: '/contacto', label: 'Contacto' }
 ]
 
 function Navbar() {
+  const { brand, contact } = useSiteContent()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const whatsappLink = buildWhatsAppLink(contact.whatsappMessage, contact.whatsappNumber)
 
   useEffect(() => {
     function handleScroll() {
@@ -30,7 +33,7 @@ function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
         <Link to="/" className="navbar-brand" onClick={() => setOpen(false)}>
-          <Logo size={30} />
+          <Logo size={30} src={brand.logoAsset?.secureUrl} />
         </Link>
 
         <nav className="navbar-links" aria-label="Navegación principal">
@@ -42,7 +45,7 @@ function Navbar() {
         </nav>
 
         <a
-          href={buildWhatsAppLink()}
+          href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary navbar-cta"
@@ -68,7 +71,7 @@ function Navbar() {
             </NavLink>
           ))}
           <a
-            href={buildWhatsAppLink()}
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

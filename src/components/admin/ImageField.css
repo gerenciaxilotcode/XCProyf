@@ -1,0 +1,57 @@
+.image-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.image-field label {
+  color: var(--xilot-gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.image-field-preview {
+  width: 100%;
+  max-width: 220px;
+  height: 120px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(167, 172, 184, 0.2);
+  background-color: var(--xilot-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-field-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-field-empty {
+  color: var(--xilot-gray);
+  font-size: 0.8rem;
+}
+
+.image-field-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.image-field-actions .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.image-field-remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--xilot-error);
+  font-size: 0.85rem;
+  padding: 8px 10px;
+}

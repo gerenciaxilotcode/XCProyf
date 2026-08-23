@@ -1,10 +1,14 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import ContactForm from '../components/contact/ContactForm.jsx'
 import { buildWhatsAppLink } from '../lib/whatsapp.js'
+import { useSiteContent } from '../hooks/useSiteContent.js'
 import './Contact.css'
 
 function Contact() {
+  const { contact } = useSiteContent()
+
   return (
     <section className="contact-page">
       <Helmet>
@@ -28,9 +32,31 @@ function Contact() {
             Cuéntanos qué necesitas y encontraremos una solución que se adapte a tu negocio y presupuesto.
           </p>
 
-          <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+          <a
+            href={buildWhatsAppLink(contact.whatsappMessage, contact.whatsappNumber)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
             Escríbenos por WhatsApp
           </a>
+
+          {(contact.phone || contact.email || contact.address || contact.schedule) && (
+            <ul className="contact-details">
+              {contact.phone && (
+                <li><Phone size={16} /> {contact.phone}</li>
+              )}
+              {contact.email && (
+                <li><Mail size={16} /> {contact.email}</li>
+              )}
+              {contact.address && (
+                <li><MapPin size={16} /> {contact.address}</li>
+              )}
+              {contact.schedule && (
+                <li><Clock size={16} /> {contact.schedule}</li>
+              )}
+            </ul>
+          )}
         </motion.div>
 
         <motion.div

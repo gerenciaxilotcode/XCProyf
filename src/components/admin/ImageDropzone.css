@@ -1,0 +1,35 @@
+.image-dropzone {
+  border: 1.5px dashed rgba(167, 172, 184, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--xilot-gray);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  text-align: center;
+}
+
+.image-dropzone:hover,
+.image-dropzone-active {
+  border-color: var(--xilot-lime);
+  background-color: rgba(183, 255, 0, 0.04);
+  color: var(--xilot-lime);
+}
+
+.image-dropzone-hint {
+  font-size: 0.75rem;
+  color: var(--xilot-gray);
+}
+
+.image-dropzone-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

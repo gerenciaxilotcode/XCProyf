@@ -1,0 +1,112 @@
+.project-card {
+  background-color: var(--xilot-graphite);
+  border: 1px solid rgba(167, 172, 184, 0.12);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(183, 255, 0, 0.35);
+}
+
+.project-card-cover {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+
+.project-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-card-cover img {
+  transform: scale(1.05);
+}
+
+.project-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(183, 255, 0, 0.14), rgba(183, 255, 0, 0.02));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--xilot-lime);
+}
+
+.project-card-placeholder span {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--xilot-white);
+  opacity: 0.5;
+}
+
+.project-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(21, 24, 35, 0.85);
+  color: var(--xilot-lime);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(183, 255, 0, 0.3);
+}
+
+.project-card-body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-card-category {
+  color: var(--xilot-lime);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-card-body h3 {
+  color: var(--xilot-white);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.project-card-body p {
+  color: var(--xilot-gray);
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+
+.project-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tech-badge {
+  background-color: rgba(167, 172, 184, 0.1);
+  color: var(--xilot-gray);
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.project-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--xilot-lime);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion'
 import { buildWhatsAppLink } from '../../lib/whatsapp.js'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './SectorsSection.css'
 
-const SECTORS = [
-  'Taquerías', 'Restaurantes', 'Hoteles', 'Colegios', 'Inmobiliarias',
-  'Agencias de viajes', 'Clínicas', 'Despachos contables', 'Salones de belleza',
-  'Tiendas', 'Talleres automotrices', 'Ferreterías', 'Servicios profesionales'
-]
-
 function SectorsSection() {
+  const { sectors, contact } = useSiteContent()
+
   return (
     <section className="sectors-section">
       <div className="container">
@@ -22,8 +19,8 @@ function SectorsSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          {SECTORS.map((sector) => (
-            <span key={sector} className="sector-tag">{sector}</span>
+          {sectors.map((sector) => (
+            <span key={sector.key} className="sector-tag">{sector.name}</span>
           ))}
         </motion.div>
 
@@ -31,7 +28,12 @@ function SectorsSection() {
           Si tu negocio es diferente, también podemos desarrollar una solución personalizada.
         </p>
 
-        <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+        <a
+          href={buildWhatsAppLink(contact.whatsappMessage, contact.whatsappNumber)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary"
+        >
           Cuéntanos qué necesitas
         </a>
       </div>

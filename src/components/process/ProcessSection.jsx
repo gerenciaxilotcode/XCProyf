@@ -1,15 +1,10 @@
 import { motion } from 'framer-motion'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './ProcessSection.css'
 
-const STEPS = [
-  { number: '01', title: 'Analizamos', description: 'Conocemos tu negocio y entendemos qué necesitas.' },
-  { number: '02', title: 'Diseñamos', description: 'Convertimos tus necesidades en una experiencia digital clara.' },
-  { number: '03', title: 'Desarrollamos', description: 'Construimos el sistema utilizando tecnologías modernas.' },
-  { number: '04', title: 'Probamos', description: 'Validamos funcionalidades, seguridad y experiencia.' },
-  { number: '05', title: 'Entregamos', description: 'Ponemos tu solución en funcionamiento y te acompañamos.' }
-]
-
 function ProcessSection() {
+  const { processSteps } = useSiteContent()
+
   return (
     <section id="nosotros" className="process-section">
       <div className="container">
@@ -20,16 +15,16 @@ function ProcessSection() {
         </p>
 
         <div className="process-grid">
-          {STEPS.map((step, index) => (
+          {processSteps.map((step, index) => (
             <motion.div
-              key={step.number}
+              key={step.key}
               className="process-step"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
             >
-              <span className="process-number">{step.number}</span>
+              <span className="process-number">{String(index + 1).padStart(2, '0')}</span>
               <h3 className="process-title">{step.title}</h3>
               <p className="process-desc">{step.description}</p>
             </motion.div>

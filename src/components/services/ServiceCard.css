@@ -12,6 +12,14 @@
   box-shadow: var(--glow-lime);
 }
 
+.service-image {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  margin-bottom: var(--space-3);
+}
+
 .service-icon {
   width: 44px;
   height: 44px;

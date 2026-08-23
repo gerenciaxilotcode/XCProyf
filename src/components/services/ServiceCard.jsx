@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import './ServiceCard.css'
 
-function ServiceCard({ icon: Icon, title, description, index = 0 }) {
+function ServiceCard({ icon: Icon, title, description, imageUrl, index = 0 }) {
   return (
     <motion.article
       className="service-card"
@@ -10,9 +10,13 @@ function ServiceCard({ icon: Icon, title, description, index = 0 }) {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.08 }}
     >
-      <div className="service-icon">
-        <Icon size={22} />
-      </div>
+      {imageUrl ? (
+        <img className="service-image" src={imageUrl} alt="" loading="lazy" />
+      ) : (
+        <div className="service-icon">
+          <Icon size={22} />
+        </div>
+      )}
       <h3 className="service-title">{title}</h3>
       <p className="service-desc">{description}</p>
     </motion.article>

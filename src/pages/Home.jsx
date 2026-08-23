@@ -4,6 +4,7 @@ import ServicesSection from '../components/services/ServicesSection.jsx'
 import ProcessSection from '../components/process/ProcessSection.jsx'
 import SectorsSection from '../components/sectors/SectorsSection.jsx'
 import DifferentiatorsSection from '../components/differentiators/DifferentiatorsSection.jsx'
+import OffersSection from '../components/offers/OffersSection.jsx'
 import CtaSection from '../components/cta/CtaSection.jsx'
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
       <ProcessSection />
       <SectorsSection />
       <DifferentiatorsSection />
+      <OffersSection />
       <CtaSection />
     </>
   )
