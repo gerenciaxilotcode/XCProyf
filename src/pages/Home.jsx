@@ -19,11 +19,11 @@ function Home() {
       </Helmet>
 
       <Hero />
+      <OffersSection />
       <ServicesSection />
       <ProcessSection />
       <SectorsSection />
       <DifferentiatorsSection />
-      <OffersSection />
       <CtaSection />
     </>
   )
