@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react'
 import { buildWhatsAppLink } from '../../lib/whatsapp.js'
 import { useSiteContent } from '../../hooks/useSiteContent.js'
 import './OffersSection.css'
@@ -23,11 +23,43 @@ function OfferValidity({ startDate, endDate }) {
   return <span className="offer-validity">Disponible desde {formatDate(startDate)}</span>
 }
 
+function OfferImageModal({ offer, onClose }) {
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  return (
+    <div
+      className="offer-modal-overlay"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={offer.title}
+    >
+      <div className="offer-modal" onClick={(event) => event.stopPropagation()}>
+        <button type="button" className="offer-modal-close" onClick={onClose} aria-label="Cerrar">
+          <X size={20} />
+        </button>
+        <img src={offer.imageAsset.secureUrl} alt={offer.title} className="offer-modal-image" />
+      </div>
+    </div>
+  )
+}
+
 function OffersSection() {
   const { offers, contact } = useSiteContent()
   const trackRef = useRef(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
+  const [expandedOffer, setExpandedOffer] = useState(null)
 
   function updateScrollState() {
     const track = trackRef.current
@@ -107,7 +139,17 @@ function OffersSection() {
             >
               <div className="offer-image-wrap">
                 {offer.imageAsset?.secureUrl ? (
-                  <img src={offer.imageAsset.secureUrl} alt={offer.title} className="offer-image" loading="lazy" />
+                  <>
+                    <img src={offer.imageAsset.secureUrl} alt={offer.title} className="offer-image" loading="lazy" />
+                    <button
+                      type="button"
+                      className="offer-expand-btn"
+                      onClick={() => setExpandedOffer(offer)}
+                      aria-label={`Ver imagen completa de ${offer.title}`}
+                    >
+                      <Maximize2 size={16} />
+                    </button>
+                  </>
                 ) : (
                   <div className="offer-image-placeholder" aria-hidden="true" />
                 )}
@@ -132,6 +174,8 @@ function OffersSection() {
           ))}
         </div>
       </div>
+
+      {expandedOffer && <OfferImageModal offer={expandedOffer} onClose={() => setExpandedOffer(null)} />}
     </section>
   )
 }
