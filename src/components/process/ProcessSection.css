@@ -1,5 +1,23 @@
 .process-section {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
+}
+
+.about-intro {
+  max-width: 720px;
+  margin-bottom: var(--space-6);
+}
+
+.about-lead {
+  color: var(--xilot-white);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-3);
+}
+
+.process-heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--xilot-white);
+  margin-bottom: var(--space-4);
 }
 
 .process-grid {
@@ -15,7 +33,7 @@
 
 .process-number {
   display: block;
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-weight: 700;
   font-size: 0.85rem;
   margin-bottom: 6px;

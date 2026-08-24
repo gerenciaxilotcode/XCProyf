@@ -21,12 +21,12 @@
 }
 
 .admin-tab-active {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   background-color: rgba(183, 255, 0, 0.08);
 }
 
 .admin-content-form {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.12);
   border-radius: var(--radius-md);
   padding: var(--space-4);

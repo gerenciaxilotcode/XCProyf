@@ -14,7 +14,7 @@
 }
 
 .project-detail-back:hover {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .project-detail-hero {
@@ -44,13 +44,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .project-detail-badge {
   display: inline-block;
   background-color: rgba(183, 255, 0, 0.1);
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-size: 0.72rem;
   font-weight: 600;
   padding: 4px 10px;
@@ -80,14 +80,14 @@
 }
 
 .project-detail-card {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.12);
   border-radius: var(--radius-md);
   padding: var(--space-4);
 }
 
 .project-detail-card h3 {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
@@ -129,11 +129,11 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--xilot-lime);
+  background-color: var(--xilot-acid);
 }
 
 .project-detail-cta {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(183, 255, 0, 0.2);
   border-radius: var(--radius-lg);
   padding: var(--space-5);

@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   min-height: 100vh;
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
 }
 
 .admin-sidebar {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border-right: 1px solid rgba(167, 172, 184, 0.12);
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@
 }
 
 .admin-nav-link.active {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   background-color: rgba(183, 255, 0, 0.08);
 }
 
@@ -108,6 +108,12 @@
   .admin-nav {
     flex-direction: row;
     flex: 1;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-nav-link {
+    flex: 0 0 auto;
   }
 
   .admin-nav-link span {

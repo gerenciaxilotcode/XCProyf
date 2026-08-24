@@ -16,7 +16,7 @@
   height: 120px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(167, 172, 184, 0.2);
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   overflow: hidden;
   display: flex;
   align-items: center;

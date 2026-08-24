@@ -31,7 +31,7 @@
 
 .status-toggle-on {
   border-color: rgba(183, 255, 0, 0.4);
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .reorder-buttons {
@@ -51,7 +51,7 @@
 }
 
 .reorder-buttons button:not(:disabled):hover {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   border-color: rgba(183, 255, 0, 0.4);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .collection-form {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.16);
   border-radius: var(--radius-lg);
   width: min(560px, 100%);
@@ -137,7 +137,7 @@
 .collection-form-body select,
 .collection-form-body textarea {
   width: 100%;
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   border: 1px solid rgba(167, 172, 184, 0.2);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
@@ -150,7 +150,7 @@
 .collection-form-body select:focus,
 .collection-form-body textarea:focus {
   outline: none;
-  border-color: var(--xilot-lime);
+  border-color: var(--xilot-acid);
   box-shadow: 0 0 0 3px rgba(183, 255, 0, 0.12);
 }
 

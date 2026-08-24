@@ -8,9 +8,9 @@
 }
 
 .navbar-scrolled {
-  background-color: rgba(21, 24, 35, 0.82);
+  background-color: rgba(9, 11, 13, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(167, 172, 184, 0.12);
+  border-bottom: 1px solid rgba(167, 173, 181, 0.12);
 }
 
 .navbar-inner {
@@ -48,7 +48,7 @@
 
 .navbar-link:hover,
 .navbar-link.active {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .navbar-cta {
@@ -67,7 +67,7 @@
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4) var(--space-4);
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   border-bottom: 1px solid rgba(167, 172, 184, 0.12);
 }
 

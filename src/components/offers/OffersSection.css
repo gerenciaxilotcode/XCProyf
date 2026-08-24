@@ -1,5 +1,5 @@
 .offers-section {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
 }
 
 .offers-grid {
@@ -9,7 +9,7 @@
 }
 
 .offer-card {
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   border: 1px solid rgba(183, 255, 0, 0.2);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -41,7 +41,7 @@
 }
 
 .offer-price {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-weight: 700;
   font-size: 0.95rem;
 }

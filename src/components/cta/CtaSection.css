@@ -1,6 +1,8 @@
 .cta-box {
-  background-color: var(--xilot-graphite);
-  border: 1px solid rgba(183, 255, 0, 0.2);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(182, 255, 0, 0.08), transparent 55%),
+    linear-gradient(160deg, var(--xilot-violet), var(--xilot-navy) 65%);
+  border: 1px solid rgba(182, 255, 0, 0.2);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   text-align: center;

@@ -1,5 +1,5 @@
 .project-card {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.12);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .project-card-placeholder span {
@@ -52,7 +52,7 @@
   top: 10px;
   left: 10px;
   background-color: rgba(21, 24, 35, 0.85);
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-size: 0.7rem;
   font-weight: 600;
   padding: 4px 10px;
@@ -68,7 +68,7 @@
 }
 
 .project-card-category {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -106,7 +106,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-weight: 600;
   font-size: 0.9rem;
 }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.12);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
@@ -30,7 +30,7 @@
 .contact-field input,
 .contact-field select,
 .contact-field textarea {
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   border: 1px solid rgba(167, 172, 184, 0.2);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
@@ -44,7 +44,7 @@
 .contact-field select:focus,
 .contact-field textarea:focus {
   outline: none;
-  border-color: var(--xilot-lime);
+  border-color: var(--xilot-acid);
   box-shadow: 0 0 0 3px rgba(183, 255, 0, 0.12);
 }
 

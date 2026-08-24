@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import CollectionManager from '../../components/admin/CollectionManager.jsx'
 import ImageField from '../../components/admin/ImageField.jsx'
-import { getHero, updateHero, getCta, updateCta, getBrand, updateBrand, processStepService, differentiatorService } from '../../services/contentAdminService.js'
+import { getHero, updateHero, getCta, updateCta, processStepService, differentiatorService } from '../../services/contentAdminService.js'
 import { useToast } from '../../hooks/useToast.js'
 import { ICON_KEYS } from '../../lib/icons.js'
 import './AdminContent.css'
@@ -10,16 +10,21 @@ const TABS = [
   { key: 'hero', label: 'Inicio' },
   { key: 'process', label: 'Cómo trabajamos' },
   { key: 'differentiators', label: 'Diferenciadores' },
-  { key: 'cta', label: 'CTA' },
-  { key: 'brand', label: 'Marca' }
+  { key: 'cta', label: 'CTA' }
 ]
+
+const EMPTY_HERO = {
+  eyebrow: '', title: '', subtitle: '', ctaPrimaryLabel: '', ctaSecondaryLabel: '', tagline: '', imageAsset: null
+}
+
+const EMPTY_CTA = { title: '', description: '', buttonLabel: '' }
 
 function HeroTab() {
   const { showToast } = useToast()
   const [form, setForm] = useState(null)
   const [saving, setSaving] = useState(false)
 
-  useEffect(() => { getHero().then(setForm) }, [])
+  useEffect(() => { getHero().then((data) => setForm(data || EMPTY_HERO)) }, [])
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -80,7 +85,7 @@ function CtaTab() {
   const [form, setForm] = useState(null)
   const [saving, setSaving] = useState(false)
 
-  useEffect(() => { getCta().then(setForm) }, [])
+  useEffect(() => { getCta().then((data) => setForm(data || EMPTY_CTA)) }, [])
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -111,61 +116,6 @@ function CtaTab() {
       <div className="collection-form-field">
         <label>Texto del botón</label>
         <input type="text" value={form.buttonLabel} onChange={(e) => setForm({ ...form, buttonLabel: e.target.value })} required />
-      </div>
-      <button type="submit" className="btn-primary" disabled={saving}>{saving ? 'Guardando...' : 'Guardar cambios'}</button>
-    </form>
-  )
-}
-
-function BrandTab() {
-  const { showToast } = useToast()
-  const [form, setForm] = useState(null)
-  const [saving, setSaving] = useState(false)
-
-  useEffect(() => { getBrand().then(setForm) }, [])
-
-  async function handleSubmit(event) {
-    event.preventDefault()
-    setSaving(true)
-    try {
-      const payload = {
-        name: form.name,
-        tagline: form.tagline,
-        description: form.description,
-        logoAssetId: form.logoAsset?.id || null,
-        faviconAssetId: form.faviconAsset?.id || null
-      }
-      const updated = await updateBrand(payload)
-      setForm(updated)
-      showToast('Marca actualizada.', 'success')
-    } catch {
-      showToast('No fue posible guardar. Intenta nuevamente.', 'error')
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  if (!form) return <div className="skeleton" style={{ height: 300 }} />
-
-  return (
-    <form className="admin-content-form" onSubmit={handleSubmit}>
-      <div className="admin-content-grid">
-        <div className="collection-form-field">
-          <label>Nombre</label>
-          <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required />
-        </div>
-        <div className="collection-form-field">
-          <label>Tagline</label>
-          <input type="text" value={form.tagline} onChange={(e) => setForm({ ...form, tagline: e.target.value })} required />
-        </div>
-        <div className="collection-form-field" style={{ gridColumn: '1 / -1' }}>
-          <label>Descripción</label>
-          <textarea rows={2} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} required />
-        </div>
-      </div>
-      <div className="admin-content-grid">
-        <ImageField label="Logo" value={form.logoAsset} onChange={(asset) => setForm({ ...form, logoAsset: asset })} />
-        <ImageField label="Favicon" value={form.faviconAsset} onChange={(asset) => setForm({ ...form, faviconAsset: asset })} />
       </div>
       <button type="submit" className="btn-primary" disabled={saving}>{saving ? 'Guardando...' : 'Guardar cambios'}</button>
     </form>
@@ -274,7 +224,6 @@ function AdminContent() {
         {activeTab === 'process' && <ProcessTab />}
         {activeTab === 'differentiators' && <DifferentiatorsTab />}
         {activeTab === 'cta' && <CtaTab />}
-        {activeTab === 'brand' && <BrandTab />}
       </div>
     </div>
   )

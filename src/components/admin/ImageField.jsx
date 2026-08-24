@@ -3,7 +3,7 @@ import { ImagePlus, X } from 'lucide-react'
 import MediaPicker from './MediaPicker.jsx'
 import './ImageField.css'
 
-function ImageField({ label, value, onChange }) {
+function ImageField({ label, value, onChange, removeLabel = 'Quitar' }) {
   const [pickerOpen, setPickerOpen] = useState(false)
 
   return (
@@ -26,7 +26,7 @@ function ImageField({ label, value, onChange }) {
         {value && (
           <button type="button" className="image-field-remove" onClick={() => onChange(null)}>
             <X size={16} />
-            Quitar
+            {removeLabel}
           </button>
         )}
       </div>

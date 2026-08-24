@@ -1,7 +1,7 @@
 .boot-screen {
   position: fixed;
   inset: 0;
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +78,7 @@
 }
 
 .boot-dot-active {
-  background-color: var(--xilot-lime);
+  background-color: var(--xilot-acid);
   transform: scale(1.4);
 }
 

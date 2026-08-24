@@ -10,7 +10,7 @@
 }
 
 .skeleton {
-  background: linear-gradient(90deg, var(--xilot-graphite) 25%, rgba(167, 172, 184, 0.08) 50%, var(--xilot-graphite) 75%);
+  background: linear-gradient(90deg, var(--xilot-navy) 25%, rgba(167, 172, 184, 0.08) 50%, var(--xilot-navy) 75%);
   background-size: 200% 100%;
   animation: skeleton-shine 1.4s ease-in-out infinite;
   border-radius: var(--radius-sm);

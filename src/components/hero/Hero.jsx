@@ -24,6 +24,7 @@ function Hero() {
     <section className="hero">
       <div className="hero-grid" />
       <div className="hero-glow" />
+      <div className="hero-glow-violet" />
 
       <motion.div className="container hero-inner" variants={container} initial="hidden" animate="visible">
         <motion.span className="eyebrow" variants={item}>

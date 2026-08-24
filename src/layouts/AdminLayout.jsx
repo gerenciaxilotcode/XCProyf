@@ -3,6 +3,7 @@ import { LayoutDashboard, FileText, Wrench, Building2, Tag, Image as ImageIcon, 
 import Logo from '../components/ui/Logo.jsx'
 import { useAuth } from '../hooks/useAuth.js'
 import { useToast } from '../hooks/useToast.js'
+import { useSiteContent } from '../hooks/useSiteContent.js'
 import './AdminLayout.css'
 
 const NAV_ITEMS = [
@@ -20,6 +21,7 @@ const NAV_ITEMS = [
 function AdminLayout() {
   const { user, logout } = useAuth()
   const { showToast } = useToast()
+  const { brand } = useSiteContent()
   const navigate = useNavigate()
 
   async function handleLogout() {
@@ -32,7 +34,7 @@ function AdminLayout() {
     <div className="admin-shell">
       <aside className="admin-sidebar">
         <div className="admin-sidebar-brand">
-          <Logo size={26} />
+          <Logo size={26} src={brand.logoAsset?.secureUrl} />
         </div>
 
         <nav className="admin-nav">

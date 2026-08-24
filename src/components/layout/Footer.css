@@ -1,6 +1,6 @@
 .footer {
   border-top: 1px solid rgba(167, 172, 184, 0.12);
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   padding: var(--space-6) 0 var(--space-4);
 }
 
@@ -38,7 +38,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .footer-contact {
@@ -49,7 +49,7 @@
 }
 
 .footer-contact a {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-weight: 600;
   font-size: 0.9rem;
 }

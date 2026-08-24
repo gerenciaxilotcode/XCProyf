@@ -6,7 +6,7 @@
 }
 
 .sector-tag {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.16);
   color: var(--xilot-gray);
   padding: 8px 16px;
@@ -17,7 +17,7 @@
 
 .sector-tag:hover {
   border-color: rgba(183, 255, 0, 0.4);
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .sectors-note {

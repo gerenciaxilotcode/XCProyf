@@ -5,11 +5,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Helmet } from 'react-helmet-async'
 import { loginSchema } from '../../lib/validations.js'
 import { useAuth } from '../../hooks/useAuth.js'
+import { useSiteContent } from '../../hooks/useSiteContent.js'
 import Logo from '../../components/ui/Logo.jsx'
 import './AdminLogin.css'
 
 function AdminLogin() {
   const { user, loading, login } = useAuth()
+  const { brand } = useSiteContent()
   const navigate = useNavigate()
   const [formError, setFormError] = useState('')
 
@@ -40,7 +42,7 @@ function AdminLogin() {
       </Helmet>
 
       <form className="admin-login-card" onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Logo size={34} />
+        <Logo size={34} src={brand.logoAsset?.secureUrl} />
         <h1>Acceso administrador</h1>
         <p>Ingresa tus credenciales para gestionar XilotCode.</p>
 

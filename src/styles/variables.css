@@ -1,10 +1,13 @@
 :root {
-  --xilot-dark: #151823;
-  --xilot-graphite: #20232D;
-  --xilot-lime: #B7FF00;
-  --xilot-white: #FFFFFF;
-  --xilot-gray: #A7ACB8;
-  --xilot-green: #8EA300;
+  /* Paleta oficial XilotCode — fuente de verdad de color en toda la app */
+  --xilot-acid: #B6FF00;
+  --xilot-lime: #9CFF00;
+  --xilot-black: #090B0D;
+  --xilot-navy: #101421;
+  --xilot-violet: #17102B;
+  --xilot-white: #F5F5F0;
+  --xilot-gray: #A7ADB5;
+
   --xilot-error: #E5484D;
   --xilot-warning: #E5A93F;
   --xilot-success: #6FCF97;
@@ -19,6 +22,6 @@
   --space-6: 64px;
   --space-7: 96px;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --glow-lime: 0 0 24px rgba(183, 255, 0, 0.18);
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --glow-lime: 0 0 24px rgba(182, 255, 0, 0.2);
 }

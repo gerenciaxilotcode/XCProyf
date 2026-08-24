@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   color: var(--xilot-white);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -41,17 +41,33 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--xilot-lime);
-  color: var(--xilot-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--xilot-acid);
+  color: var(--xilot-black);
   font-weight: 600;
   padding: 14px 28px;
   border-radius: var(--radius-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-primary:hover {
+  background-color: var(--xilot-lime);
   transform: translateY(-2px);
   box-shadow: var(--glow-lime);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--xilot-white);
+  outline-offset: 2px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-secondary {
@@ -65,18 +81,28 @@ img {
 }
 
 .btn-secondary:hover {
-  border-color: var(--xilot-lime);
-  color: var(--xilot-lime);
+  border-color: var(--xilot-acid);
+  color: var(--xilot-acid);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--xilot-acid);
+  outline-offset: 2px;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .card {
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.12);
   border-radius: var(--radius-md);
 }
 
 :focus-visible {
-  outline: 2px solid var(--xilot-lime);
+  outline: 2px solid var(--xilot-acid);
   outline-offset: 2px;
 }
 
@@ -103,7 +129,7 @@ img {
 }
 
 .xilot-logo-accent {
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
 }
 
 .xilot-logo-image {
@@ -117,7 +143,7 @@ section {
 
 .eyebrow {
   display: inline-block;
-  color: var(--xilot-lime);
+  color: var(--xilot-acid);
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -155,7 +181,7 @@ section {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(167, 172, 184, 0.16);
   border-radius: var(--radius-sm);
   padding: 14px 18px;
@@ -166,7 +192,7 @@ section {
 }
 
 .toast-success { border-color: rgba(183, 255, 0, 0.35); }
-.toast-success svg { color: var(--xilot-lime); }
+.toast-success svg { color: var(--xilot-acid); }
 .toast-error { border-color: rgba(229, 72, 77, 0.4); }
 .toast-error svg { color: var(--xilot-error); }
 .toast-info svg { color: var(--xilot-gray); }

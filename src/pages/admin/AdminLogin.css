@@ -4,19 +4,29 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-4);
-  background-color: var(--xilot-dark);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(23, 16, 43, 0.7), transparent 55%),
+    var(--xilot-black);
 }
 
 .admin-login-card {
-  background-color: var(--xilot-graphite);
-  border: 1px solid rgba(167, 172, 184, 0.12);
+  background-color: var(--xilot-navy);
+  border: 1px solid rgba(167, 173, 181, 0.14);
   border-radius: var(--radius-lg);
   padding: var(--space-6) var(--space-5);
   max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-3);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.admin-login-card .contact-field {
+  width: 100%;
+  text-align: left;
 }
 
 .admin-login-card h1 {
@@ -32,5 +42,7 @@
 }
 
 .admin-login-card button {
+  width: 100%;
+  justify-content: center;
   margin-top: var(--space-2);
 }

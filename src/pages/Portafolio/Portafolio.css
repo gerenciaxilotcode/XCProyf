@@ -24,8 +24,8 @@
 }
 
 .portafolio-filter-active {
-  border-color: var(--xilot-lime);
-  color: var(--xilot-lime);
+  border-color: var(--xilot-acid);
+  color: var(--xilot-acid);
   background-color: rgba(183, 255, 0, 0.06);
 }
 

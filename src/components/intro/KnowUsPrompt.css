@@ -1,7 +1,7 @@
 .know-screen {
   position: fixed;
   inset: 0;
-  background-color: var(--xilot-dark);
+  background-color: var(--xilot-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
 .know-card {
   position: relative;
   z-index: 1;
-  background-color: var(--xilot-graphite);
+  background-color: var(--xilot-navy);
   border: 1px solid rgba(183, 255, 0, 0.16);
   border-radius: var(--radius-lg);
   padding: var(--space-6) var(--space-5);
