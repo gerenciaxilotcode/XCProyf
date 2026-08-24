@@ -6,6 +6,10 @@ import './DifferentiatorsSection.css'
 function DifferentiatorsSection() {
   const { differentiators } = useSiteContent()
 
+  if (!differentiators || differentiators.length === 0) {
+    return null
+  }
+
   return (
     <section className="differentiators-section">
       <div className="container">

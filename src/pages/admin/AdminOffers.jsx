@@ -4,7 +4,7 @@ import { offerService } from '../../services/contentAdminService.js'
 
 const INITIAL_STATE = {
   title: '', description: '', priceText: '', ctaLabel: '', ctaLink: '',
-  imageAsset: null, active: false
+  imageAsset: null, active: true
 }
 
 function toFormState(item) {

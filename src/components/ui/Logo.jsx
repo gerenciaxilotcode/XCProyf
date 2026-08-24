@@ -15,11 +15,7 @@ function Logo({ size = 32, withWordmark = true, src, className = '' }) {
           <circle cx="20" cy="20" r="2" fill="var(--xilot-white)" />
         </svg>
       )}
-      {withWordmark && (
-        <span className="xilot-logo-text">
-          Xilot<span className="xilot-logo-accent">Code</span>
-        </span>
-      )}
+      {withWordmark && <span className="xilot-logo-text">XilotCode</span>}
     </span>
   )
 }

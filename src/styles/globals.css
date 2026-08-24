@@ -128,10 +128,6 @@ img {
   color: var(--xilot-white);
 }
 
-.xilot-logo-accent {
-  color: var(--xilot-acid);
-}
-
 .xilot-logo-image {
   border-radius: var(--radius-sm);
   object-fit: cover;
